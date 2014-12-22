@@ -84,10 +84,13 @@ be used by the replacement instruction.
 
 Relative jump instructions are stored as an offset to the following
 instruction. So, in the case of the following code block:
-Address
-      1  JMP to 3
-      2  Do Nothing
-      3  Do Something
+```
+Address | Instruction
+--------|-------------
+   0001 | JMP to 0003
+   0002 | Do Nothing
+   0003 | Do Something
+```
 
 The jump instruction would be encoded as 'Jump +1', since 2 is the address of
 the next instruction.  This is because the processor automatically adds the
